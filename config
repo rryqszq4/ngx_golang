@@ -1,0 +1,15 @@
+ngx_addon_name=ngx_http_golang_module
+HTTP_MODULES="$HTTP_MODULES ngx_http_golang_module"
+NGX_ADDON_SRCS="$NGX_ADDON_SRCS $ngx_addon_dir/src/ngx_http_golang_module.c \
+                                $ngx_addon_dir/src/ngx_http_golang_directive.c \
+                                $ngx_addon_dir/src/ngx_http_golang_handler.c \
+                                "
+
+NGX_ADDON_DEPS="$NGX_ADDON_DEPS $ngx_addon_dir/src/ngx_http_golang_module.h \
+                                $ngx_addon_dir/src/ngx_http_golang_directive.h \
+                                $ngx_addon_dir/src/ngx_http_golang_handler.h \
+                                "
+
+CORE_INCS="$CORE_INCS /root/source1/ngx_golang/go/test "
+
+CORE_LIBS="$CORE_LIBS -L/root/source1/ngx_golang/go/test -lcgongx"
